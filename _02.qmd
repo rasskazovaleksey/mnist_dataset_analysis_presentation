@@ -1,0 +1,18 @@
+# Data collection
+
+## Data collection
+Two datasets is used for this work: 
+[MNIST dataset](http://yann.lecun.com/exdb/mnist/) and [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
+
+As thuse sets are normalized 28x28 px matrix, any set and be processed as is. 
+
+
+## To Serious Machine Learning Researchers
+
+"Seriously, we are talking about replacing MNIST. Here are some good reasons:" [^1]
+
+- MNIST is too easy.
+- MNIST is overused.
+- MNIST can not represent modern CV tasks.
+
+[^1]: [Fashion-MNIST github](https://github.com/zalandoresearch/fashion-mnist?tab=readme-ov-file#to-serious-machine-learning-researchers)

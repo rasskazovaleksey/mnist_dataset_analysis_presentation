@@ -1,0 +1,14 @@
+---
+title: "Intro"
+subtitle: "Image clasification"
+author: "Alexey Rasskazov"
+format: 
+    pdf:
+        code-fold: true
+iew-mode: raw
+from: markdown+emoji
+jupyter: python3
+---
+
+{{< include _01_goal.qmd >}}
+{{< include _02_data_collection.qmd >}}

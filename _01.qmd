@@ -1,0 +1,50 @@
+---
+format: revealjs
+---
+
+# Goal
+
+::: {.notes}
+The goal section defines the main objectives and aims of the project.
+:::
+
+## Goal Definition
+
+- **Main Goal:** Build a system to classify handwritten digits/fashion items
+- **Sub Goal:** Test performance with accuracy scores
+- **Sub Goal:** Measure training time of each model
+- **Sub Goal:** Investigate variance for given models
+
+::: {.notes}
+The main goal is to benchmark the performance of models studied during the EWD course on a relatively large dataset containing images. The objective is to test the models' accuracy and, as a sub-goal, measure the time taken for model training. Different models are expected to yield different accuracy scores. The final sub-goal of this presentation is to investigate the reasons behind these variances.
+:::
+
+
+## Models under test { .smaller }
+
+- Classification:
+    - Logistic Regression
+    - K Neighbors
+    - Naive Bayes
+- Tree-based methods:
+    - Decision Tree
+    - Random Forest
+- Clustering:
+    - K-means
+
+::: {.notes}
+These models have been studied during the EWD course. Each model falls under a different category, including classification, tree-based methods, and clustering, allowing for a comprehensive performance evaluation across various types of algorithms.
+:::
+
+## Goal Visualization
+
+| Model | Params | Dataset | Accuracy | Time | Investigation |
+|-------|--------|---------|----------|------|---------------|
+| Name  |        | Fashion | 0.{x}    | x.x  |               |
+| Name  |        | MNIST   | 0.{x}    | x.x  |               |
+
+: Each model is collected into the table as [zalandoresearch](http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/#) did for visual comparison.
+
+::: {.notes}
+As a project result, I aim to present the accuracy of predictions for each model and the training time required. It is expected that the accuracy will vary between models. This table provides a clear visual comparison of these metrics.
+:::

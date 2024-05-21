@@ -1,0 +1,48 @@
+---
+title: "EWD project"
+author: "Alexey Rasskazov"
+format: 
+    revealjs:
+        code-fold: true
+    # html:
+    #     toc: true
+    # gfm:
+    #     preview-mode: raw
+from: markdown+emoji
+jupyter: python3
+---
+
+{{< include _01_goal.qmd >}}
+{{< include _02_data_collection.qmd >}}
+{{< include _03_exploratory_data_analysis.qmd >}}
+
+
+
+
+
+# Data preprocessing :x:
+
+## Vector roataion
+
+**TODO:** Images are vector of of 28*28=784 attributes. 
+
+## Scaling
+
+**TODO:** speack about Norm/MinMax/Sigmod/Tanh picture scaling for 255 clastericastion.
+
+## Attributes selection based on PCA
+
+**TODO:** see linearity of model slide for reference.
+
+# Modeling :x:
+
+## Logistic Regression :x:
+## K Neighbors :x:
+## Naive Bayes :x:
+## Decision Tree :x:
+## Random Forest :x:
+## K-mean :x:
+## Hierarchical Clustering :x:
+
+# Evaluation :x:
+# Deployment :x:

@@ -1,0 +1,123 @@
+[
+  {
+    "model": "LogisticRegression",
+    "params": {
+      "penalty": [
+        "l1",
+        "l2",
+        "elasticnet",
+        null
+      ],
+      "solver": [
+        "lbfgs",
+        "liblinear",
+        "newton-cg",
+        "newton-cholesky",
+        "sag",
+        "saga"
+      ],
+      "C": [
+        0.1,
+        0.3,
+        0.5,
+        0.75,
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "fit_intercept": [
+        true,
+        false
+      ],
+      "max_iter": [
+        50,
+        100,
+        500,
+        1000
+      ],
+      "multi_class": [
+        "auto",
+        "ovr",
+        "multinomial"
+      ],
+      "tol": [
+        0.00001,
+        0.0001,
+        0.001,
+        0.01,
+        0.1,
+        0.5,
+        1
+      ]
+    }
+  },
+  {
+    "model": "KNeighborsClassifier",
+    "params": {
+      "algorithm": [
+        "auto",
+        "ball_tree",
+        "kd_tree",
+        "brute"
+      ],
+      "leaf_size": [30],
+      "metric": ["minkowski"],
+      "p": [
+        1,
+        2
+      ],
+      "weights": [
+        "uniform",
+        "distance"
+      ]
+    }
+  },
+  {
+    "model": "GaussianNB",
+    "params": null
+  },
+  {
+    "model": "DecisionTreeClassifier",
+    "params": {
+      "criterion": [
+        "gini",
+        "entropy",
+        "log_loss"
+      ],
+      "splitter": [
+        "best",
+        "random"
+      ],
+      "max_depth": [
+        null,
+        3,
+        4,
+        6,
+        8,
+        10,
+        14,
+        20
+      ],
+      "min_samples_split": [
+        2,
+        3,
+        4
+      ],
+      "min_samples_leaf": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "RandomForestClassifier",
+    "params": null
+  },
+  {
+    "model": "KMeans",
+    "params": null
+  }
+]
