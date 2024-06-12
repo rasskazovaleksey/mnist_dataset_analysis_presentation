@@ -1,0 +1,64 @@
+# Exploratory Data Analysis
+
+::: {.notes}
+The datasets consist of 28x28 pixel images. Let's explore them.
+:::
+
+## Visualization of Dataset
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### MNIST:
+{{< embed _03_exploratory_data_analysis.ipynb#data_mnist >}}
+:::
+
+::: {.column width="50%"}
+### Fashion:
+{{< embed _03_exploratory_data_analysis.ipynb#data_fashion >}}
+:::
+
+::::
+
+::: {.notes}
+Each image in the dataset is represented as a 784-dimensional space of pixels with labels varying from 0 to 9. The MNIST dataset contains handwritten digits with labels corresponding to the numbers written. The Fashion dataset includes a collection of clothing items with their corresponding labels.
+:::
+
+## Common Features
+
+- Images are 28x28 pixels.
+- Each example is a grayscale image.
+- One of 10 labels is given for each image.
+- Each training set contains 60,000 images.
+- Each testing set contains 10,000 images.
+
+::: {.notes}
+Each image is a 28x28 grayscale image, giving a 784-dimensional vector space. Grayscale values range from 0 to 255, with 0 representing a white background and 255 representing a black foreground. Labels are provided in a separate file as an array of integers corresponding to the classes each image belongs to. 60,000 images are used for training, and 10,000 images are used for testing.
+:::
+
+## Constant Columns 
+
+Number of columns that have a constant value:
+
+- In the **MNIST** dataset: **67**
+- In the **Fashion** dataset: **0**
+
+::: {.notes}
+The MNIST training dataset contains 67 pixels, primarily in the corners of the images, that do not change color across the 60,000 images. It might be beneficial to remove them as they do not affect clustering and could improve modeling speed through dimensionality reduction. However, since the fashion dataset has no such pixels, this step will be skipped. It's still useful to know for potential optimization.
+:::
+
+## MNIST Color Distribution
+
+{{< embed _03_exploratory_data_analysis.ipynb#mnist_color_count >}}
+
+::: {.notes}
+The MNIST dataset contains mostly white and black pixels, with almost 81% of them being white. This suggests that the majority of the data's variance will be explained by a few pixels.
+:::
+
+## Fashion Color Distribution
+
+{{< embed _03_exploratory_data_analysis.ipynb#fashion_color_count >}}
+
+::: {.notes}
+In contrast, the fashion dataset has a smoother color distribution, with white pixels representing only about 50% of all pixels. This indicates that more pixels in each image will impact the variance.
+:::

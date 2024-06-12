@@ -8,3 +8,5 @@
 !*.qmd
 !*.py
 !*.ipynb
+*.out.ipynb
+!/output

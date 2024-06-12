@@ -1,0 +1,64 @@
+# Data preprocessing
+
+::: {.notes}
+Visual analysis of the data shows that not all pixels have the same importance. For example, pixels in the corners of MNIST images are less important. Additionally, some colors are more significant than others.
+:::
+
+## Data standartisation
+
+- **Black And White:** 
+$$
+T(x_i)=
+\begin{cases}
+0 \text{ white, for } x_i < 128 \\
+1 \text{ black, for } x_i \geq 128
+\end{cases}
+$$
+
+- **MinMax:**
+$$
+T(x_i) = \frac{x_i - min(x)}{max(x) - min(x)} = \frac{x_i}{255}
+$$
+
+
+::: {.notes}
+First, we can reduce the contrast of colors in the dataset. I've selected a simple Black and White transformation, but other methods like 4-bit grayscale can also be used. MinMax scaling is preferred over standard scaling since, as shown in Chapter 3, about 80% of MNIST pixels and 50% of fashion dataset pixels are purely white. Standard scaling, which removes the mean and scales to unit variance, would bias the data toward white. Intuitively, standard scaling might yield worse results.
+:::
+
+## Principal Component Analysis
+
+{{< embed _04_data_preprocessing.ipynb#pca_mnist_fashion >}}
+
+::: {.notes}
+Analysis was conducted using a Fibonacci sequence of components up to the number of dimensions. The illustration shows cumulative variance versus the number of PCA features for unscaled, Black and White scaled, and MinMax scaled data. Generally, most of the variance in the data can be explained by around 10% of the pixels, except for Black and White scaling. MinMax scaling showed similar results to no scaling at all.
+:::
+
+## Attribute selection based on PCA
+
+- **mnist**_no_scaling **89** accunts for **90.22%** of variance
+- **mnist**_black_and_white **144** accounts for **86.71%** of variance
+- **mnist**_min_max **89** accounts for **90.22%** of variance
+- **fashion**_no_scaling **89** accounts for **90.41%** of variance
+- **fashion**_black_and_white **233** accunts for **90.66%** of variance
+- **fashion**_min_max **89** accounts for **90.40%** of variance
+
+::: {.notes}
+For the non-scaled datasets, 89 components account for approximately 90% of the variance in both MNIST and Fashion datasets. For Black and White scaling, 144 and 233 attributes were selected for MNIST and Fashion, respectively, to account for 90% of the variance. MinMax scaled data will not be used in future modeling as it shows the same effect on variance due to the nature of the data, where all pixels range from 0 to 255, so MinMax scaling does not significantly affect it.
+:::
+
+## Final datasets
+
+| Dataset | Number of Params | Scaling |
+|---------|------------------|---------|
+| MNIST   | 784              | nan     |
+| MNIST   | 784              | B&W     |
+| MNIST   | 89               | nan     |
+| MNIST   | 233              | B&W     |
+| Fashion | 784              | nan     |
+| Fashion | 784              | B&W     |
+| Fashion | 89               | nan     |
+| Fashion | 233              | B&W     |
+
+::: {.notes}
+The final selection of datasets is shown in the table. Data selected for future modeling includes both unscaled and Black and White scaled data with the full number of dimensions. For each dataset, dimensions are reduced to 89 and 233 for unscaled and B&W datasets, respectively. The number of dimensions is kept consistent across MNIST and Fashion datasets for the same scaling to benchmark runtime. In the end, we have 8 datasets to be tested across different models.
+:::

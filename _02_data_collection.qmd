@@ -1,0 +1,33 @@
+---
+format: html
+---
+# Data collection
+
+::: {.notes}
+These datasets are collections of images with corresponding labels for each image. The MNIST dataset consists of handwritten digits from 0 to 9, while the fashion-MNIST dataset containsimages of various clothing items.
+:::
+
+## Data collection
+Two datasets is used for this work: 
+[MNIST dataset](http://yann.lecun.com/exdb/mnist/) and [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
+
+As thuse sets are normalized 28x28 px matrix, any set and be processed as is. 
+
+::: {.notes}
+In this section, we explain how the data was collected and the reasons behind choosing these specific datasets. The MNIST dataset was chosen for its simplicity and historical significancein digit classification, providing a baseline for model performance. The fashion-MNIST datasetwas selected to introduce more complexity and modern relevance, challenging the models withdiverse clothing images and better representing current computer vision tasks.
+:::
+
+
+## To Serious Machine Learning Researchers
+
+"Seriously, we are talking about replacing MNIST. Here are some good reasons:" [^1]
+
+- MNIST is too easy.
+- MNIST is overused.
+- MNIST can not represent modern CV tasks.
+
+[^1]: [Fashion-MNIST github](https://github.com/zalandoresearch/fashion-mnist?tab=readme-ov-file#to-serious-machine-learning-researchers)
+
+::: {.notes}
+The traditional MNIST dataset has limitations: it is too easy, heavily overused, and fails to reflect the complexity of modern computer vision tasks. Therefore, Fashion-MNIST is proposed as a more challenging and representative alternative for benchmarking.
+:::

@@ -1,0 +1,71 @@
+# Modeling
+
+::: {.notes}
+In this section, we discuss modeling for our data. We will go through hyperparameter tuning using grid search to find the best model.
+:::
+
+## Logistic Regression
+
+{{< embed _05_modeling.ipynb#logistic_regression >}}
+
+::: {.notes}
+The solvers liblinear and newton-cholesky can only handle binary classification by default, so they were removed from the parameters, leaving lbfgs, newton-cg, sag, and saga. Only l2 and None penalties are supported by these solvers. The C-parameter was selected as a multiplication of 10. Later in the modeling, the newton-cg solver was removed as it was the slowest one, although it was the most accurate.
+:::
+
+## K Neighbors
+
+{{< embed _05_modeling.ipynb#k_neighbors_classifier >}}
+
+::: {.notes}
+K-nearest neighbors are straightforward. The number of neighbors was chosen based on the Fibonacci sequence, with norm and weight parameters.
+:::
+
+## Naive Bayes
+
+{{< embed _05_modeling.ipynb#gaussianNB >}}
+
+::: {.notes}
+Naive Bayes is another straightforward model.
+:::
+
+## SVC
+
+{{< embed _05_modeling.ipynb#SVC >}}
+
+::: {.notes}
+This is the most promising model of them all. LinearSVC makes one of the best predictions.
+:::
+
+## Decision Tree
+
+{{< embed _05_modeling.ipynb#DecisionTreeClassifier >}}
+
+::: {.notes}
+Starting with tree-based models, we use a simple decision tree with some parameters.
+:::
+
+## Random Forest
+
+{{< embed _05_modeling.ipynb#RandomForestClassifier >}}
+
+::: {.notes}
+Finishing with tree-based models, we use a simple random forest with some parameters.
+:::
+
+## Single Iteration
+
+{{< embed _05_modeling.ipynb#single_iteration echo=true >}}
+
+::: {.notes}
+For a single iteration of code, I used grid search and processed it. The resulting data frame was saved to be evaluated in Chapter 6.
+:::
+
+## Overall training: Mnist original
+
+{{< embed _05_modeling.ipynb#time >}}
+
+::: {.notes}
+Unfortunately, it was impossible to search through all models within the given time limit. It took more than a week to process the original MNIST dataset without modifications. Since there is no time to test the other seven datasets, I leave it to you to test them. Let's move on to the evaluation of results.
+:::
+
+

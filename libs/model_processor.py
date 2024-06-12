@@ -7,6 +7,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
 
 
 def read_params(path: str = "data/params.json") -> dict:
@@ -31,5 +32,7 @@ def create_default_model(name: str):
         return KMeans()
     elif name == "AgglomerativeClustering":
         return AgglomerativeClustering()
+    elif name == "SVC":
+        return SVC()
     else:
         raise ValueError(f"'{name}' is not supported")

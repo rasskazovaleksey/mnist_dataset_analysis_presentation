@@ -3,7 +3,7 @@ title: "Intro"
 subtitle: "Image clasification"
 author: "Alexey Rasskazov"
 format: 
-    pdf:
+    revealjs:
         code-fold: true
 iew-mode: raw
 from: markdown+emoji

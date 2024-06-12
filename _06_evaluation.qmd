@@ -1,0 +1,62 @@
+# Evaluation
+
+::: {.notes}
+Since I was only able to process the original MNIST dataset without scaling and/or dimensionality reduction, I will base my results purely on this model. Additionally, since some models took too much time to compute, I will not validate results on the testing set. Unfortunately, it takes too much time to compute results.
+:::
+
+## Logistic Regression
+
+{{< embed _06_evaluation.ipynb#LogisticRegression >}}
+
+::: {.notes}
+Logistic Regression algorithms take an extremely long time, especially newton-cg, which was excluded for this reason. It provided the best results but was the slowest. Overall, all solvers show approximately the same result. I am confident that if we apply a t-test to the distribution of results, we will find that the solver does not affect the score.
+:::
+
+## K Neighbors
+
+{{< embed _06_evaluation.ipynb#KNeighborsClassifier >}}
+
+::: {.notes}
+KNN shows some interesting results. The main pattern is that weights based on distance generally tend to classify better. The most interesting result is that if we ask KNN to classify based only on one neighbor, it will give 100% accuracy. Additionally, the majority of time taken by KNN is in testing results, not fitting.
+:::
+
+## Naive Bayes
+
+{{< embed _06_evaluation.ipynb#GaussianNB >}}
+
+::: {.notes}
+One of the simplest classification methods in the series, Naive Bayes, yields the lowest score.
+:::
+
+## SVC
+
+{{< embed _06_evaluation.ipynb#SVC >}}
+
+::: {.notes}
+SVC yields the best results for grid search. The accuracy of the model increases drastically with changes in the kernel and C parameter.
+:::
+
+## Decision Tree
+
+{{< embed _06_evaluation.ipynb#DecisionTreeClassifier >}}
+
+::: {.notes}
+As expected, it works like a charm. Model fitting was extremely fast, though the final results are not as accurate.
+:::
+
+## Random Forests
+
+{{< embed _06_evaluation.ipynb#RandomForestClassifier >}}
+
+::: {.notes}
+Intuitively, it performs better than a regular decision tree.
+:::
+
+## Accuracy Scores
+
+{{< embed _06_evaluation.ipynb#accuracy_scores echo=true >}}
+
+::: {.notes}
+I didnt have anought time to finish final accuracy testing. Whought I finished the code. You can try it you self
+:::
+

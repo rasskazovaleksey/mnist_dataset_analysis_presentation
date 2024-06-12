@@ -1,0 +1,13 @@
+# Deployments
+
+::: {.notes}
+This is final part.
+:::
+
+## Link
+
+[![QR code](mnist_dataset_analysis_presentation.png){width=200,height=200}]
+
+::: {.notes}
+I've deployed the repository to GitHub. You can scan the QR code to access the project and try it yourself.
+:::

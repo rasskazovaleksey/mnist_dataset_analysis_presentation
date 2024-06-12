@@ -1,7 +1,6 @@
 ---
-format: revealjs
+format: html
 ---
-
 # Goal
 
 ::: {.notes}
@@ -20,17 +19,16 @@ The main goal is to benchmark the performance of models studied during the EWD c
 :::
 
 
-## Models under test { .smaller }
+## Models under test
 
-- Classification:
+- Classifiers:
     - Logistic Regression
-    - K Neighbors
+    - K Nearest Neighbors
     - Naive Bayes
+    - SVC
 - Tree-based methods:
     - Decision Tree
     - Random Forest
-- Clustering:
-    - K-means
 
 ::: {.notes}
 These models have been studied during the EWD course. Each model falls under a different category, including classification, tree-based methods, and clustering, allowing for a comprehensive performance evaluation across various types of algorithms.
